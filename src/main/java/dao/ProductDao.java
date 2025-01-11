@@ -21,16 +21,22 @@ public class ProductDao {
     public Product getProductById(Long id) {
         return entityManager.find(Product.class, id);
     }
-
+    
     public void saveProduct(Product product) {
         EntityTransaction transaction = entityManager.getTransaction();
         try {
             transaction.begin();
-            entityManager.merge(product); 
+            if (product.getId() == null) {
+                entityManager.persist(product);
+            } else {
+                entityManager.merge(product);
+            }
             transaction.commit();
-        } catch (Exception e) {
-            if (transaction.isActive()) transaction.rollback();
+        } catch (RuntimeException e) {
+            transaction.rollback();
             throw e;
         }
     }
+
+
 }

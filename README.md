@@ -55,6 +55,36 @@ Certifique-se de ter as seguintes ferramentas instaladas no seu computador:
 
     A aplicação será iniciada no console, e você poderá interagir com ela diretamente por meio de entradas e saídas no terminal.
 
+### Como Resolver Caso o JAR Não Funcione
+
+Caso você encontre dificuldades ao tentar executar o arquivo JAR, como um erro que indique que o arquivo não pode ser acessado ou que falte alguma dependência, siga as seguintes etapas:
+
+1. **Verifique se o arquivo JAR foi gerado corretamente**:
+   - Acesse a pasta `target` do seu projeto e verifique se o arquivo `Shopping-Cart-Manager-1.0.0.jar` está presente.
+   - Caso o arquivo JAR não esteja presente, execute novamente o comando Maven `mvn clean install` para compilar e gerar o JAR.
+
+2. **Erros de Classe ou Dependências Faltando**:
+   - Caso a execução do JAR falhe devido a classes ausentes, como `javax.persistence.Persistence`, adicione as dependências corretas no seu arquivo `pom.xml` (se já não estiverem presentes). Para isso, adicione a dependência do JPA (Java Persistence API), como mostrado abaixo:
+
+    ```xml
+    <dependency>
+        <groupId>javax.persistence</groupId>
+        <artifactId>javax.persistence-api</artifactId>
+        <version>2.2</version>
+    </dependency>
+    ```
+
+3. **Problemas com Permissões no Sistema Operacional**:
+   - Se você receber erros de permissão ao tentar rodar o arquivo JAR, certifique-se de que tem permissões adequadas de leitura e execução no arquivo.
+   - Caso esteja em um sistema Unix (Linux/Mac), execute o seguinte comando para garantir permissões de execução:
+
+    ```bash
+    chmod +x target/Shopping-Cart-Manager-1.0.0.jar
+    ```
+
+4. **Verifique a versão do Java**:
+   - Certifique-se de estar usando uma versão compatível do Java (8 ou superior). Execute o comando `java -version` para verificar a versão instalada.
+
 ### Configuração Adicional
 
 #### Configuração do Maven (Se necessário)

@@ -57,8 +57,48 @@ Certifique-se de ter as seguintes ferramentas instaladas no seu computador:
 
 ### Configuração Adicional
 
-- **Banco de Dados**: Caso tenha incluído scripts SQL, eles estarão no diretório `src/main/resources/sql`. Você pode importá-los manualmente no phpMyAdmin.
-- **Configuração de Porta**: Caso necessário, altere a porta padrão no arquivo `application.properties`:
+#### Configuração do Maven (Se necessário)
+
+Caso você não tenha o Maven instalado ou se o Maven não estiver funcionando corretamente, siga os passos abaixo para configurá-lo:
+
+1. **Baixar o Apache Maven**
+   - Acesse a página oficial do Apache Maven: [https://maven.apache.org/download.cgi](https://maven.apache.org/download.cgi)
+   - Baixe a versão mais recente do Maven (geralmente um arquivo `.zip` ou `.tar.gz`).
+
+2. **Instalar o Apache Maven**
+   - Extraia o conteúdo do arquivo baixado para um diretório de sua escolha, por exemplo, `C:\maven` (Windows) ou `/opt/maven` (Linux/Mac).
+   - Certifique-se de que o diretório `bin` do Maven esteja no PATH do sistema.
+   
+     **No Windows:**
+     - Vá em "Propriedades do Sistema" -> "Configurações avançadas do sistema" -> "Variáveis de Ambiente".
+     - Em "Variáveis do sistema", procure pela variável `Path`, e adicione o caminho para o diretório `bin` do Maven (por exemplo, `C:\maven\bin`).
+
+     **No Linux/Mac:**
+     - Abra o terminal e edite o arquivo `.bashrc` ou `.zshrc` (dependendo do shell que você usa).
+     - Adicione a linha:
+
+       ```bash
+       export PATH=/opt/maven/bin:$PATH
+       ```
+
+     - Salve e execute `source ~/.bashrc` ou `source ~/.zshrc` para recarregar as configurações do shell.
+
+3. **Verifique a instalação do Maven**
+   - Após a instalação, abra um terminal e digite:
+
+     ```bash
+     mvn -v
+     ```
+
+   - Isso deve retornar a versão do Maven instalada, indicando que o Maven foi configurado corretamente.
+
+#### Banco de Dados
+
+- Caso tenha incluído scripts SQL, eles estarão no diretório `src/main/resources/sql`. Você pode importá-los manualmente no phpMyAdmin.
+
+#### Configuração de Porta
+
+- Caso necessário, altere a porta padrão no arquivo `application.properties`:
 
     ```properties
     server.port=8081

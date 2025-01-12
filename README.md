@@ -23,31 +23,21 @@ Certifique-se de ter as seguintes ferramentas instaladas no seu computador:
 2. **Configure o Banco de Dados no XAMPP**
     - Inicie o XAMPP e certifique-se de que os módulos Apache e MySQL estão em execução.
     - Acesse o phpMyAdmin no navegador em [http://localhost/phpmyadmin](http://localhost/phpmyadmin).
-    - Crie uma base de dados com o nome shopping_cart.
+    - No phpMyAdmin, crie uma base de dados com o nome shopping_cart.
     - Importe o arquivo `shopping_cart.sql` fornecido no repositório:
       - No phpMyAdmin, clique em **Importar**.
       - Clique no botão **Escolher arquivo** e selecione o arquivo `shopping_cart.sql` localizado no diretório `src/main/resources/sql`.
       - Clique em **Executar** para importar o banco de dados com as tabelas vazias.
     - Certifique-se de que o banco de dados foi importado com sucesso e que as tabelas estão presentes.
 
-3. **Configurar o application.properties**
-    - No diretório `src/main/resources`, edite o arquivo `application.properties` com as informações do seu banco de dados:
-
-    ```properties
-    spring.datasource.url=jdbc:mysql://localhost:3306/shopping_cart
-    spring.datasource.username=seu_usuario
-    spring.datasource.password=sua_senha
-    spring.jpa.hibernate.ddl-auto=update
-    ```
-
-4. **Compile o Projeto**
+3. **Compile o Projeto**
     - No terminal, vá para a pasta raiz do projeto e execute:
 
     ```bash
     mvn clean install
     ```
 
-5. **Execute a Aplicação**
+4. **Execute a Aplicação**
     - Após a compilação, execute o JAR gerado:
 
     ```bash

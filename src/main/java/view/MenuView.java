@@ -25,12 +25,13 @@ public class MenuView {
 	public void displayMenu() {
 		while (true) {
 			System.out.println("=== Menu ===");
-			System.out.println("1. Add Product");
-			System.out.println("2. Add Product to Cart");
-			System.out.println("3. View Cart");
-			System.out.println("4. Remove Products from Cart");
-			System.out.println("5. Calculate Cart Total");
-			System.out.println("6. Tax ");
+			System.out.println("1. Show all products available");
+			System.out.println("2. Add Product");
+			System.out.println("3. Add Product to Cart");
+			System.out.println("4. View Cart");
+			System.out.println("5. Remove Products from Cart");
+			System.out.println("6. Calculate Cart Total");
+			System.out.println("7. Tax ");
 			System.out.println("0. Exit");
 			System.out.print("Choose an option: ");
 
@@ -44,21 +45,24 @@ public class MenuView {
 
 			switch (choice) {
 			case 1:
-				addProduct();
+				showAllProducts();
 				break;
 			case 2:
-				addProductToCart();
+				addProduct();
 				break;
 			case 3:
-				displayCart();
+				addProductToCart();
 				break;
 			case 4:
-				removeProductFromCart();
+				displayCart();
 				break;
 			case 5:
-				calculateTotal();
+				removeProductFromCart();
 				break;
 			case 6:
+				calculateTotal();
+				break;
+			case 7:
 				deliveryTax();
 				break;
 			case 0:
@@ -70,6 +74,25 @@ public class MenuView {
 		}
 	}
 
+	
+	private void showAllProducts() {
+	    List<Product> products = productController.getAllProducts();
+	    if (products.isEmpty()) {
+	        System.out.println("No products available.");
+	    } else {
+	        System.out.println("Available products:");
+	        for (Product product : products) {
+	            System.out.printf("ID: %d | Name: %s | Price: $%.2f | Stock: %d%n", 
+	                product.getId(), product.getName(), product.getPrice(), product.getQuantity());
+	        }
+	    }
+	}
+
+	
+	
+	
+	
+	
 	private void addProduct() {
 		try {
 			System.out.print("Enter the product name: ");

@@ -23,6 +23,7 @@ Certifique-se de ter as seguintes ferramentas instaladas no seu computador:
 2. **Configure o Banco de Dados no XAMPP**
     - Inicie o XAMPP e certifique-se de que os módulos Apache e MySQL estão em execução.
     - Acesse o phpMyAdmin no navegador em [http://localhost/phpmyadmin](http://localhost/phpmyadmin).
+    - Crie uma base de dados com o nome shopping_cart.
     - Importe o arquivo `shopping_cart.sql` fornecido no repositório:
       - No phpMyAdmin, clique em **Importar**.
       - Clique no botão **Escolher arquivo** e selecione o arquivo `shopping_cart.sql` localizado no diretório `src/main/resources/sql`.

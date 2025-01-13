@@ -113,10 +113,6 @@ Caso você não tenha o Maven instalado ou se o Maven não estiver funcionando c
 
    - Isso deve retornar a versão do Maven instalada, indicando que o Maven foi configurado corretamente.
 
-#### Banco de Dados
-
-- Caso tenha incluído scripts SQL, eles estarão no diretório `src/main/resources/sql`. Você pode importá-los manualmente no phpMyAdmin.
-
 #### Configuração de Porta
 
 - Caso necessário, altere a porta padrão no arquivo `application.properties`:

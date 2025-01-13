@@ -73,7 +73,6 @@ public class MenuView {
 			}
 		}
 	}
-
 	
 	private void showAllProducts() {
 	    List<Product> products = productController.getAllProducts();
@@ -88,11 +87,6 @@ public class MenuView {
 	    }
 	}
 
-	
-	
-	
-	
-	
 	private void addProduct() {
 		try {
 			System.out.print("Enter the product name: ");
@@ -112,7 +106,7 @@ public class MenuView {
 				System.out.println("Error: Quantity cannot be negative.");
 				return;
 			}
-
+			
 			Product product = new Product(null, name, price, quantity);
 			productController.saveProduct(product);
 			System.out.println("Product added successfully: " + name);

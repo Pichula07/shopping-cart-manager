@@ -19,8 +19,6 @@ public class ProductController {
     public List<Product> getAllProducts() {
         return productDao.getAllProducts();
     }
-
-
     
     public Product getProductById(Long id) {
     	if(id ==null || id <0){

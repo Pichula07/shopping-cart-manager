@@ -30,7 +30,6 @@ public class CartItem {
     @JoinColumn(name = "product_id") 
     private Product product;
 
-    
     public CartItem() {}
     
     public CartItem(Long id, double price, int quantity, double totalValue, Product product) {
@@ -81,9 +80,4 @@ public class CartItem {
 		this.product = product;
 	}
 
-	@Override
-	public String toString() {
-		return "CartItem [id=" + id + ", price=" + price + ", quantity="
-				+ quantity + ", totalValue=" + totalValue + "]";
-	}
 }
